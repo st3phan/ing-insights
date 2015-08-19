@@ -1,0 +1,18 @@
+
+	.btn, .user-content .btn {
+	
+		&:hover {
+			@include background(linear-gradient(top, rgba(255, 103, 1, 1), rgba(255, 139, 61, 1)));
+		}
+	
+		display: inline-block;
+		@include rem(padding, $line/2 $line);
+		background: #ff6701;
+		@include background(linear-gradient(top, rgba(255, 139, 61, 1), rgba(255, 103, 1, 1)));
+		border: 0;
+		border-bottom: 1px solid #C94A00;
+		@include border-radius(3px);
+		color: $white;
+		@include text-shadow(-1px -1px 0 rgba(0, 0, 0, 0.3));
+		font-weight: bold;
+	}

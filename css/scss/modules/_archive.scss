@@ -1,0 +1,27 @@
+
+	.insights.archive {
+	
+		h1 {
+			padding: $line/2 0;
+			color: $orange;
+			text-align: center;
+		}
+
+		.day {
+			
+			&.before {
+
+				@include respond-to(landscape) {
+					width: 50%;
+				}
+				
+				@include respond-to(desktop) {
+					width: 33.3%;
+				}
+				
+				@include respond-to(wide) {
+					width: 25%;
+				}
+			}		
+		}
+	}

@@ -1,0 +1,317 @@
+
+    // ========== Footer ==========
+    
+    .nav-footer {
+    	margin: $line 0 0 0;
+    	background: $white;
+    	
+    	> .page {
+    		overflow: visible;
+    		clear: none;
+    	}
+    	
+    	.section {
+    	
+    		&:first-child {
+    			border-top: 0;
+    		}
+    	
+    		@include rem(margin, 0 $line/2);
+			@include rem(padding, $line $line/2);
+    		border-top: 1px dotted $silver;
+    		
+    		@include respond-to(tablet) {
+    		
+	    		&:first-child {
+	    			//border-left: 0;
+	    		}
+    		
+	    		float: left;
+	    		width: 33.3%;
+	    		@include rem(margin, $line 0);
+	    		@include rem(padding, $line $line);
+	    		border-top: 0;
+	    		//border-left: 1px dotted $silver; 		
+    		}
+    	}
+    	
+    	.legal {
+ 			@include rem(font-size, 13px);
+ 			
+	    	.copyright {
+	    		display: block;
+   	 			color: $dove;
+   	 		}
+   	 		
+   	 		.trade {
+   	 			display: block;
+   	 			color: $grey;
+   	 		}
+   	 		
+   	 		.vicompany {
+   	 			@include ir;
+   	 			float: left;
+   	 			width: 150px;
+   	 			height: 15px;
+   	 			margin: $line/2 0 0 0;
+   	 			background: url(../img/icons/vi_company.png);
+   	 			
+   	 			&:hover {
+   	 				background-position: 0 -15px;
+   	 			}
+   	 			
+   	 			@include respond-to(retina) {
+   	 				background: url(../img/icons-retina/vi_company_2x.png);
+   	 				background-size: 150px 30px;
+   	 			}
+   	 		}
+   	 	}
+   	 	
+   	 	.meta {
+   	 		@include clear;
+   	 		list-style: none;
+   	 		
+   	 		li {
+ 				float: left;
+ 				width: 50%;
+   	 			font-weight: bold;
+   	 			@include rem(font-size, 12px);
+   	 			
+   	 			@include respond-to(tablet) {
+   	 				float: none;
+   	 				width: 100%;
+   	 			}
+   	 			
+   	 			@include respond-to(desktop) {
+	 				float: left;
+	 				width: 50%;
+   	 			}
+
+   	 			a {
+   	 				display: block;
+   	 				padding: $line/4 0;
+   	 				color: $dove;
+   	 				text-decoration: none;
+   	 			}
+   	 		}
+   	 	}
+   	 	
+   	 	.contact {
+   	 		@include rem(font-size, 13px);
+   	 		text-transform: uppercase;
+   	 		color: $grey;
+   	 		text-align: center;
+   	 		
+   	 		@include respond-to(tablet) {
+   	 			text-align: left;
+   	 			text-transform: none;
+   	 		}
+   	 	
+   	 		h3 {
+   	 			@include rem(font-size, 13px);
+   	 			color: $black;
+   	 			
+   	 			@include respond-to(tablet) {
+   	 				color: $orange;
+   	 			}
+   	 		}
+   	 		
+   	 		.tel {
+   	 			display: block;
+   	 			padding: $line/4 0;
+   	 			
+   	 			a {
+   	 				display: block;
+   	 				color: $orange;
+   	 				@include rem(font-size, 24px);
+   	 				font-weight: bold;
+   	 				text-decoration: none;
+   	 				
+					@include respond-to(tablet) {
+						@include rem(font-size, 16px);
+						color: $dove;
+					}
+					
+					@include respond-to(desktop) {
+						display: inline-block;
+					}
+   	 			}
+   	 		}
+   	 		
+   	 		.email {
+   	 			display: block;
+   	 			
+   	 			a {
+   	 				display: block;
+   	 				padding: $line/4 0;
+   	 				@include rem(font-size, 18px);
+   	 				color: $dove;
+   	 				font-weight: bold;
+   	 				text-decoration: none;
+   	 				
+					@include respond-to(tablet) {
+						padding: 0;
+						@include rem(font-size, 12px);
+					}
+   	 			}
+   	 		}
+   	 	}
+    }
+    
+    /* rating */
+    
+    .site-rating {
+		display: none;
+    	@include clear;
+    	margin: $line*3*-1 0 $line 0;
+		padding: $line $line/2;
+    	background: $white;
+    	border: 1px solid #D7D7D7;
+    	@include box-shadow(1px 1px 0 rgba(0, 0, 0, 0.05));
+    	text-align: center;
+    	
+		@include respond-to(desktop) {
+			display: block;
+		}
+		
+		.lt-ie8 & {
+			display: none;
+		}
+    	
+    	h4 {
+    		padding: 0 0 $line/2 0;
+    		@include rem(font-size, 14px);
+			color: $orange;
+    	}
+    	
+    	.label {
+    		float: left;
+    	}
+    
+    }
+    
+    .site-rating-popup {
+    	display: none;
+    }
+    
+	.site-rating-popup-holder {
+		@include rem(padding, $line);
+
+    	h4 {
+    		@include rem(font-size, 22px);
+			color: $orange;
+    	}
+    	
+    	p {
+    		padding: $line 0 0 0;
+    		@include rem(font-size, 16px);
+    	}
+    	
+    	.site-rating-list {
+    		left: 0;
+    		margin: $line 0;
+    		
+    		li {
+    			left: 0;
+    		}
+    	}
+    	
+    	ol {
+    		@include clear;
+    		list-style-type: none;
+    		
+    		li {
+    			padding: $line 0 0 0;
+    			
+    			&:first-child {
+    				padding-top: 0;
+    			}
+    		}
+    		
+    		label {
+    			display: block;
+    			padding: 0 0 $line/2 0;
+    			@include rem(font-size, 16px);
+    			font-weight: bold;
+    			color: $black;
+    		}
+    		
+    		textarea {
+    			width: 100%;
+    			padding: 5px;
+    			@include box-shadow(1px 1px 1px rgba(0, 0, 0, 0.1) inset);
+    			@include border-radius(3px);
+    			border: 1px solid #CACACA;
+    			@include rem(font-size, 14px);
+    			
+    			&.error {
+    				border: 1px solid $orange;
+    			}
+    		}
+    		
+    		input[type="email"] {
+    			width: 100%;
+    			padding: 5px;
+    			@include box-shadow(1px 1px 1px rgba(0, 0, 0, 0.1) inset);
+    			@include border-radius(3px);
+    			border: 1px solid #CACACA;
+    			@include rem(font-size, 14px);
+    			
+    			&.error {
+    				border: 1px solid $orange;
+    			}
+    		}
+    		
+    		input[type="submit"] {
+    			@include rem(font-size, 14px);
+    		}
+    	}
+	}
+    	
+   	.site-rating-list {
+		position: relative;
+		left: 50%;
+		float: left;
+
+		li {
+			position: relative;
+			right: 50%;
+			float: left;
+			list-style-type: none;
+			
+			&.label {
+				@include rem(font-size, 11px);
+				color: $grey;
+				line-height: $line*1.25;
+				padding: 0 2px;
+				
+				@include respond-to(wide) {
+					padding: 0 10px;
+				}
+			}
+			
+			a {
+				display: block;
+				width: $line*1.25;
+				height: $line*1.25;
+				margin: 0 1px;
+    			background: $sand;
+    			@include rem(font-size, 11px);
+    			line-height: $line*1.25;
+    			color: $silver;
+    			font-weight: bold;
+    			text-align: center;
+    			border-top: 1px solid $grey;
+    			border-right: 1px solid $alto;
+				border-right: 1px solid $alto;
+    			border-left: 1px solid $grey;
+    			@include border-radius(2px);
+    			
+    			&.active, &:hover {
+    				background: $orange;
+    				color: $white;
+    				@include box-shadow(inset 1px 1px 0 0 rgba(255,255,255,.3));
+    			}
+			}
+		}
+	}

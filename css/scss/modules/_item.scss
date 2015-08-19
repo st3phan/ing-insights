@@ -1,0 +1,123 @@
+
+	.content.item {
+		// we use a mixin to build the grid
+		// look in _content.scss for this mixin
+		@include contentGrid() { }
+		
+		.main > .wrapper > header {
+			@include rem(padding-top, $line*2);
+		
+			h1 {
+				@include rem(font-size, 24px);
+				line-height: 1;
+				color: $orange;
+				
+				@include respond-to(landscape) {
+					@include rem(font-size, 36px);
+				}
+				
+				@include respond-to(tablet) {
+					@include rem(font-size, 48px);
+				}
+				
+				@include respond-to(desktop) {
+					@include rem(font-size, 54px);
+				}
+				
+				@include respond-to(wide) {
+					@include rem(font-size, 64px);
+				}
+				
+				.wrap {
+					
+					span {
+						position: relative;
+					}
+				}
+
+				.subtitle {
+					display: block;
+					@include rem(font-size, 16px);
+					color: $navy;
+					
+					@include respond-to(landscape) {
+						@include rem(font-size, 20px);
+					}
+					
+					@include respond-to(tablet) {
+						@include rem(font-size, 28px);
+					}
+
+					@include respond-to(desktop) {
+						@include rem(font-size, 32px);
+					}
+					
+					@include respond-to(wide) {
+						@include rem(font-size, 38px);
+					}
+				}
+			}
+			
+/*
+			h2 {
+				@include rem(padding-top, $line);
+				@include rem(font-size, 20px);
+				color: $black;
+			}
+*/
+			
+			p {
+				@include clear;
+				@include rem(padding, 0 0 $line 0);
+				@include rem(font-size, 16px);
+				font-weight: bold;
+				color: $black;
+			
+				.cat {
+					
+					@include respond-to(tablet) {
+						float: left;
+					}
+				}
+			
+				.dt {
+					display: block;
+					
+					@include respond-to(tablet) {
+						float: right;
+					}
+				}
+			}
+			
+			.article-info {
+				padding: 0 0 $line 0;
+				
+				ul {
+					@include clear;
+					list-style: none; 
+					
+					li {
+					
+						&.category {
+							float: left;
+						}
+						
+						clear: right;
+						float: right;
+						margin: 0 0 $line/4 0;
+						@include rem(font-size, 14px);
+						line-height: 1.2;
+						color: $black;
+						font-weight: bold;
+						
+						.value {
+							display: inline-block;
+							@include rem(font-size, 16px);
+							@include rem(line-height, 12px);
+							font-weight: bold;
+						}
+					}
+				}
+			}
+		}
+	}

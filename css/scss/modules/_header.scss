@@ -1,0 +1,56 @@
+
+	.header-main {
+		@include rem(padding, 0 $line/2);
+		
+		> .wrapper {
+			@include clear;
+			@include rem(padding, $line 0);
+			border-bottom: 5px solid $orange;
+		}
+		
+		.logo {	
+			float: left;
+			background: url(../img/icons/ing-logo.png);
+			width: 128px;
+			height: 32px;
+			@include ir;
+			
+			@include respond-to(retina) {
+				background: url(../img/icons-retina/ing-logo.png);
+				background-size: 100%;
+			}
+		}
+		
+		.brand {
+			float: right;
+			background: url(../img/icons/ingmarkets-logo.png);
+			width: 166px;
+			height: 20px;
+			@include ir;
+			margin-top: 10px;
+			
+			@include respond-to(retina) {
+				background: url(../img/icons-retina/ingmarkets-logo.png);
+				background-size: 100%;
+			}
+		}
+	}
+	
+	.notification {
+		padding: $line/4 $line;
+		@include rem(font-size, 14px);
+		color: $navy;
+		font-weight: bold;
+		line-height: 1.5;
+		text-align: center;
+		border-bottom: 1px solid $orange;
+		
+		@include respond-to(tablet) {
+			@include rem(font-size, 20px);
+		}
+		
+		&.high-prio {
+			background: $orange;
+			color: $white;
+		}
+	}

@@ -1,0 +1,219 @@
+
+	.sidebar {
+		padding: $line/2;
+		
+		> .wrapper {
+			@include clear;
+		}
+		
+		.data {
+		
+			@include respond-to(tablet) {
+				float: left;
+				width: 50%;
+				padding-right: $line/2;
+			}
+			
+			@include respond-to(desktop) {
+				float: none;
+				width: 100%;
+				padding-right: 0;
+			}
+		}
+		
+		h3 {
+			@include rem(padding, 0 $line/2 $line/2 $line/2);
+			@include rem(font-size, 14px);
+			color: $navy;
+			
+			.asterisk {
+				@include rem(font-size, 12px);
+			}
+		}
+		
+		h4 {
+			@include rem(padding, 0 0 $line/2 0);
+			@include rem(font-size, 14px);
+			color: $orange;
+		}
+		
+		.section {
+			@include rem(padding, $line 0);
+			//border-bottom: 1px solid $alto;
+			//@include box-shadow(0 1px 0 0 $white);
+		}
+		
+		.author {
+			@include clear;
+			padding: $line $line/2;
+			
+			.avatar {
+				float: left;
+				margin: 0 15px 0 0;
+			}
+			
+			h4 {
+				padding-bottom: 6px;
+				color: $navy;
+			}
+			
+			.name {
+				display: block;
+				@include rem(font-size, 20px);
+				font-weight: bold;
+				color: $orange;
+			}
+			
+			.title {
+				display: block;
+				padding: 7px 0 0 0;
+				@include rem(font-size, 12px);
+				color: $grey;
+			}
+		}
+		
+		.references {
+		
+			.wrap {
+			
+				a:first-child {
+				
+					.underlying {
+						border-top: 0;
+						@include box-shadow(none);
+					}
+				}
+			}
+
+			.underlying {
+			
+				&:hover {
+					background: $sand;
+				}
+			
+				@include clear;
+				border-top: 1px solid $alto;
+				padding: $line/2 $line/2;
+
+				h4 {
+					float: left;
+					width: 45%;
+					@include rem(font-size, 20px);
+					@include rem(line-height, 24px);
+					padding-bottom: 0;
+					color: $orange;
+				}
+			
+				.reference {
+					float: left;
+					width: 35%;
+					text-align: right;
+					
+					.value {
+						@include rem(line-height, 24px);
+						@include rem(font-size, 24px);
+						font-weight: bold;
+						color: $black;
+					}
+				}
+
+				
+				.difference {
+					float: left;
+					width: 20%;
+					text-align: right;
+					
+					.value {
+						color: $black;
+					
+						&.negative {
+							color: $red;
+						}
+						
+						&.positive {
+							color: $green;
+						}
+						
+						@include rem(line-height, 24px);
+					}
+				}
+			}
+		}
+		
+		.realtime {
+		
+			@include respond-to(tablet) {
+				float: left;
+				width: 50%;
+			}
+			
+			@include respond-to(desktop) {
+				float: none;
+				width: 100%;
+			}
+
+			ul {
+				list-style: none;
+
+				li {
+				
+					&:first-child {
+						border-top: 0;
+					}
+				
+					@include rem(font-size, 12px);
+					@include rem(line-height, 16px);
+					border-top: 1px solid $alto;
+
+					a {
+						position: relative;
+						display: block;
+						@include rem(padding, $line/2 $line/2 $line/2 $line*3);
+						color: $black;
+						text-decoration: none;
+						
+						&:hover {
+							background: $sand;
+						}
+					}
+
+					span {
+						position: absolute;
+						top: $line/2;
+						left: $line/2;
+						color: $grey;
+					}
+				}
+			}
+		}
+		
+		.morning-mail {
+			position: relative;
+			float: left;
+			width: 100%;
+			clear: both;
+			margin: $line $line/2;
+			padding: $line/1.5 $line;
+			border: 1px solid $alto;
+			background: $white url(../img/icons/morning-mail-bg.png) no-repeat 95% bottom;
+			
+			h3 {
+				margin: 0;
+				padding: 0 0 $line/4 0;
+			}
+			
+			p {
+				padding: 0 25% 0 0;
+				@include rem(font-size, 12px);
+				color: $dove;
+				line-height: 1.2;
+				
+				.cta {
+					display: block;
+					padding: $line/4 0 0 0;
+					color: $orange;
+					font-weight: bold;
+				}
+			}
+		}
+	}

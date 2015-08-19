@@ -1,0 +1,67 @@
+
+	ul.ui-autocomplete {
+		position: absolute;
+		background: #fff;
+		list-style: none;
+		@include box-shadow(0px 2px 15px rgba(0, 0, 0, 0.2));
+		
+		li {
+		
+			&.view-all {
+				float: left;
+				width: 100%;
+				background: $sand;
+			}
+			
+			&.more-info {
+			
+				a {
+					span {
+						color: $orange;
+						font-weight: bold;
+					}
+				}
+			}
+		
+			border-bottom: 1px dotted #D6D6D6;
+			@include rem(font-size, 12px);
+			@include rem(line-height, 16px);
+			
+			a {
+			
+				&:hover,
+				&.ui-state-hover {
+					background-color: $serenade;
+				}
+				
+				&.insights {
+					color: $navy;
+				}
+				
+				@include clear;
+				display: block;
+				padding: $line/2;
+				color: $black;
+				
+				em {
+					display: block;
+					font-style: normal;
+					font-weight: bold;
+				}
+				
+				strong {
+					color: $orange;
+				}
+				
+				.wkn {
+					float: left;
+					color: $grey;
+				}
+				
+				.isin {
+					float: right;
+					color: $grey;
+				}
+			}
+		}
+	}

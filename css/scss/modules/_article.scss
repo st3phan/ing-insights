@@ -1,0 +1,123 @@
+
+	// ========== Highlight ==========
+	
+	.content.article {
+	
+		// we use a mixin to build the grid
+		// look in _content.scss for this mixin
+		@include contentGrid(65%) { }
+	
+		> .wrapper > header {
+			@include clear;
+		
+			h1 {
+				clear: both;
+				z-index: 1;
+				position: relative;
+				@include rem(padding, $line*2 $line 0 $line);
+				@include rem(font-size, 24px);
+				line-height: 1.175;
+				@include text-shadow(1px 1px 0px rgba(0, 0, 0, 1));
+				color: $white;
+				
+				@include respond-to(landscape) {
+					@include rem(font-size, 36px);
+				}
+				
+				@include respond-to(tablet) {
+					@include rem(font-size, 48px);
+				}
+				
+				@include respond-to(desktop) {
+					@include rem(font-size, 54px);
+				}
+				
+				@include respond-to(wide) {
+					@include rem(font-size, 64px);
+				}
+				
+				.wrap {
+					
+					span {
+						position: relative;
+						background: $black;
+						background: rgba(0,0,0,.3);
+					}
+				}
+
+				.subtitle {
+					display: block;
+					@include rem(font-size, 16px);
+					
+					@include respond-to(landscape) {
+						@include rem(font-size, 20px);
+					}
+					
+					@include respond-to(tablet) {
+						@include rem(font-size, 28px);
+					}
+
+					@include respond-to(desktop) {
+						@include rem(font-size, 36px);
+					}
+					
+					@include respond-to(wide) {
+						@include rem(font-size, 48px);
+					}
+				}
+			}
+			
+			.intro > .wrapper {
+				background: $white;
+				background: rgba(255,255,255,.95);
+					
+				p {
+					@include rem(font-size, 16px);
+					font-weight: bold;
+					line-height: 1.4;
+					color: $black;
+					
+					@include respond-to(tablet) {
+						@include rem(font-size, 20px);
+					}
+				}
+			}
+			
+			.article-info {
+				position: relative;
+				z-index: 1;
+				
+				ul {
+					@include clear;
+					padding: $line;
+					list-style: none; 
+					
+					li {
+					
+						&.category {
+							float: left;
+						}
+						
+						clear: right;
+						float: right;
+						margin: 0 0 $line/4 0;
+						padding: 2px 5px;
+						background: $black;
+						background: rgba(0,0,0,.3);
+						@include rem(font-size, 14px);
+						@include rem(line-height, 16px);
+						color: $white;
+						font-weight: bold;
+						@include text-shadow(1px 1px 0px rgba(0, 0, 0, 1));
+						
+						.value {
+							display: inline-block;
+							@include rem(font-size, 16px);
+							@include rem(line-height, 12px);
+							font-weight: bold;
+						}
+					}
+				}
+			}
+		}
+	}

@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+    // ========== Sprites ==========
+
+	//$icons-sprite-dimensions: true;
+	//@import "icons/*.png";
+	//@import "iconsretina/*.png";
+	//$sprites: sprite-map("sprites/*.png");
+	//$sprites-retina: sprite-map("sprites-retina/*.png");
+	
+	// ========== Variables ==========
+    
+	$line: 18px;
+	$font-size: 16px;
+	$em: $font-size * 1;
+
+    // ========== Imports ==========
+
+    @import "mixins";
+    @import "libs/normalize.css";
+    @import "compass/utilities";
+    @import "compass/css3";
+
+	// ========== Globals ==========
+
+	* {
+		@include box-sizing(border-box);
+		*behavior: url(boxsizing.htc);
+	}
+	
+    // ========== Imports ==========
+	
+	@import "animation";
+	@import "colors";
+	@import "fonts";
+	
+    // ========== Wrappers ==========
+	
+    body {
+    	position: relative;
+        background: #eee;
+        background: url(../img/bg_body.gif);
+        
+        &:after {
+        	z-index: -1;
+        	content: "";
+        	position: absolute;
+        	top: 0;
+        	left: 0;
+        	width: 100%;
+        	height: 200px;
+        	@include background(linear-gradient(top, rgba(255,255,255,1) 30%, rgba(255,255,255,0)));
+        }
+    }
+
+	.page {
+		@include clear;
+		width: 100%; /* need this for <IE8 */
+		max-width: 1500px; /* <IE8 override in screen_ie.scss */
+		
+		@include respond-to(tablet) {
+			padding: 0 5.55555%;
+		}
+		
+		@include respond-to(desktop) {
+			 margin: 0 auto;
+		}
+	}	
+	
+	@import "modules/buttons";
+	@import "modules/autocomplete";
+	@import "modules/header";
+	@import "modules/navigation";
+	@import "modules/dashboard";
+	@import "modules/insights";
+	@import "modules/content";
+	@import "modules/disqus";
+	@import "modules/sidebar";
+	@import "modules/article";
+	@import "modules/author";
+	@import "modules/item";
+	@import "modules/archive";
+	@import "modules/footer";

@@ -1,0 +1,70 @@
+
+    // ========== Fonts ==========
+
+	@font-face {
+	    font-family: 'INGMarketsIconsRegular';
+	    src: url('../fonts/ingmarketsicons-regular-webfont.eot');
+	    src: url('../fonts/ingmarketsicons-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	         url('../fonts/ingmarketsicons-regular-webfont.woff') format('woff'),
+	         url('../fonts/ingmarketsicons-regular-webfont.ttf') format('truetype');
+	    font-weight: normal;
+	    font-style: normal;
+	}
+	
+	@font-face {
+	    font-family: 'Rockwell';
+	    src: url('../fonts/c82c9575-cfe0-4e48-ba83-ea825e25d124-2.eot');
+	    src: url('../fonts/c82c9575-cfe0-4e48-ba83-ea825e25d124-2.eot?#iefix') format('embedded-opentype'),
+	         url('../fonts/c82c9575-cfe0-4e48-ba83-ea825e25d124-3.woff') format('woff'),
+	         url('../fonts/c82c9575-cfe0-4e48-ba83-ea825e25d124-1.ttf') format('truetype');
+	    font-weight: bold;
+	    font-style: normal;
+	}
+	
+	// iconfont
+	
+	.nav-main .home,
+	.mobile-menu .toggle-search,
+	.nav-main .search .submit,
+	.dashboard .social li,
+	.indicator,
+	.insights .item.before .icon,
+	.insights .archive .icon,
+	.content .products td.buy,
+	.article-info .value,
+	.social-share .button .front .icon,
+	.paging .prev,
+	.paging .next,
+	.morning-mail:after
+	{
+		font-family: INGMarketsIconsRegular;
+		font-size: 16px;
+		font-weight: normal;
+	}
+	
+	// rockwell
+	
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	.nav-main li,
+	.insights .day-header,
+	.user-content blockquote,
+	.btn,
+	.insights .item.qa .indicator,
+	.insights .archive a,
+	.content .article-info,
+	.insights .item p,
+	.insights .item.before .qa .icon,
+	.social-share .button .front,
+	.content .sidebar .author .name,
+	.notification
+	{
+		font-family: Rockwell, sans-serif;
+		font-weight: bold;
+		
+	}
+	

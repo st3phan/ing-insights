@@ -1,0 +1,13 @@
+// Transparently ignore media queries for IE stylesheet
+@mixin respond-to($media) {
+	@if $media != wide and $media != retina {
+		@content;
+	}
+}
+
+@import "shared";
+
+.page {
+	width: 990px;
+	padding: 0;
+}

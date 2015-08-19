@@ -1,0 +1,680 @@
+
+    // ========== Insights ==========
+    
+	.insights {
+		@include clear;
+		@include rem(padding, $line/2 0);
+
+		.day-header {
+			@include rem(padding, $line/2 0 $line/2 0);
+			text-align: center;
+
+			> .wrapper {
+				position: relative;
+				display: inline-block;
+				background: #efefef;
+				border: 1px solid $silver;
+				@include border-radius(3px);
+				@include box-shadow(0 1px 0 0 $white inset, 0 1px 0 0 $white);
+				@include rem(font-size, 16px);
+				color: $silver;
+				font-weight: bold;
+			}
+
+			> .wrapper:after, > .wrapper:before {
+				content: "";
+				position: absolute;
+				top: 100%;	
+				height: 0;
+				width: 0;
+				border: solid transparent;
+				pointer-events: none;
+			}
+
+			> .wrapper:after {
+				left: 50%;
+				margin-left: -5px;
+				border-top-color: #efefef;
+				border-width: 5px;
+			}
+			> .wrapper:before {
+				border-top-color: #aaaaac;
+				border-width: 6px;
+				left: 50%;
+				margin-left: -6px;
+			}
+			
+			a {
+				color: $grey;
+			}
+			
+			.day {
+				float: left;
+				@include rem(padding, $line/2);
+			}
+			
+			.new {
+			
+				&.show {
+					display: block;
+				}
+			
+				float: left; 
+				display: none;
+
+				.day {
+					background: #ff6802;
+					@include background(linear-gradient(top, #ff8a3c, #ff6802));
+					border-left: 1px solid $white;
+					color: #fff;
+					text-decoration: none;
+				}
+			}
+		}
+
+		.day {
+			
+			&.today {
+				@include clear;
+			}
+			
+			&.yesterday {
+				@include clear;
+	
+				.item {
+					
+					> .wrapper {
+						background: #dcdeef;
+					}
+					
+					&.article {
+					
+						> .wrapper {
+							background: #fff;
+						}
+					}
+					
+					&.update {
+					
+						> .wrapper {
+							background: #fff;
+						}
+					
+						footer {
+							background: 0;
+						}
+					}
+					
+					&.ing-news {
+					
+						> .wrapper {
+							background: #fff;
+						}
+						
+						.btn {
+							@include rem(font-size, 14px);
+						}
+					}
+					
+					&.qa {
+					
+						> .wrapper {
+							background: #fff;
+						}
+					}
+					
+					@include respond-to(landscape) {
+						width: 50%;
+					}
+					
+					@include respond-to(desktop) {
+						width: 25%;
+					}
+					
+					@include respond-to(wide) {
+						width: 20%;
+					}
+	
+					header {
+	
+						h2 {
+						
+							.title {
+								@include rem(font-size, 18px);
+							}
+	
+							.subtitle {
+								@include rem(font-size, 12px);	
+							}
+						}
+						
+						h3 {
+							@include rem(font-size, 14px);
+						}
+					}
+					
+					p {
+						@include rem(padding-bottom, $line);
+					}
+				}
+			}
+			
+			&.before {				
+				float: left;
+				
+				@include respond-to(landscape) {
+					width: 50%;
+				}
+				
+				@include respond-to(desktop) {
+					width: 33.3%;
+				}
+				
+				.item {
+					width: 100%;
+				}
+			}
+		}
+		
+		.item {
+		
+			&:hover {
+
+				> .wrapper {
+					border-color: $navy;
+					@include box-shadow(0 0 15px 0 rgba(0,0,102,.15));
+				}
+
+				p {
+					color: #000066;
+				}
+			}
+			
+			&.featured {
+			
+				header {
+
+					h2 {
+
+						.subtitle {
+
+							@include respond-to(tablet) {
+								@include rem(font-size, 22px);
+							}	
+						
+							@include rem(font-size, 16px);
+						}
+						
+						.title {
+						
+							@include respond-to(tablet) {
+								@include rem(font-size, 42px);
+							}						
+						
+							@include rem(font-size, 24px);
+						}
+					}
+				}
+
+				p {
+				
+					@include respond-to(tablet) {
+						@include rem(font-size, 24px);
+					}
+				
+					@include rem(font-size, 18px);
+				}
+			}
+			
+			&.highlight {
+			
+				header {
+				
+					h2 {				
+						color: $white;
+						@include text-shadow(1px 1px 0px rgba(0, 0, 0, 1));
+					
+						.wrap {
+							background: $black;
+							background: rgba(0,0,0,.5);
+						}
+					}
+				}
+			}
+
+			&.article {
+			
+				&.featured {
+				
+					header {
+	
+						h2 {
+							color: $white;
+							@include text-shadow(1px 1px 0px rgba(0, 0, 0, 1));
+	
+							.wrap {
+								background: $navy;
+								background: rgba(0,0,102,.5);
+							}
+						}
+					}
+				}
+
+				header {
+					background: $navy;
+
+					h2 {
+						color: $white;
+						@include text-shadow(1px 1px 0px rgba(0, 0, 0, 1));
+					}
+				}
+			}
+
+			&.update {
+
+				header {
+					background: $white;
+
+					h2 {
+
+						.subtitle {
+							color: $black;
+						}
+						
+						.title {
+							color: $orange;
+						}
+					}
+				}
+			}
+			
+			&.ing-news {
+			
+				> .wrapper {
+					border: 1px solid $orange;
+				}
+				
+				header {
+					background: $orange;
+					
+					h2 {
+						color: $black;
+					}
+					
+					h3 {
+						@include rem(padding, $line 0 0 0);
+						@include rem(font-size, 18px);
+						color: $white;
+					}
+					
+					.indicator {
+						color: $trinidad;
+						
+						&.lion {
+							font-size: 180px;
+							margin-top: -90px;
+							top: auto;
+							bottom: $line*-1;
+						}
+					}
+				}
+				
+				.logo {
+					float: right;
+					margin-top: 6px;
+					background: url(../img/icons/ing-logo-small.png);
+					width: 70px;
+					height: 18px;
+					@include ir;
+					
+					@include respond-to(retina) {
+						background: url(../img/icons-retina/ing-logo-small.png);
+						background-size: 100%;
+					}
+				}
+			}
+			
+			&.realtime {
+			
+				> .wrapper {
+					overflow: auto;
+				}
+
+				h3 {
+					@include rem(padding, $line $line 0 $line);
+					@include rem(font-size, 18px);
+					color: $orange;
+				}
+
+				ul {
+					@include rem(padding, $line/2 $line/2 $line $line/2);
+					list-style: none;
+
+					li {
+						@include rem(font-size, 12px);
+						border-top: 1px solid $mercury;
+
+						&:first-child {
+							border-top: 0;
+						}
+
+						a {
+							position: relative;
+							display: block;
+							@include rem(padding, $line/2 $line/2 $line/2 $line*3);
+							color: $black;
+							text-decoration: none;
+							
+							&:hover {
+								background: $sand;
+							}
+						}
+
+						span {
+							position: absolute;
+							top: $line/2;
+							left: $line/2;
+							color: $grey;
+						}
+					}
+				}
+			}
+			
+			&.before {
+			
+				ul {
+					@include rem(padding, $line/2);
+					list-style: none;
+
+					li {
+
+						&:first-child {
+							border-top: 0;
+						}
+						
+						&.update {
+							
+							a, .icon {
+								color: $orange;
+							}
+							
+							.subtitle {
+								color: $black;
+							}
+						}
+						
+						&.ing-news, &.ing-news.event {
+						
+							.icon {
+								color: $orange;
+							}
+						}
+						
+						&.article {
+						
+							.icon {
+								color: $navy;
+							}
+						}
+						
+						@include rem(font-size, 12px);
+						@include rem(line-height, 16px);
+						border-top: 1px solid $mercury;
+
+						a {
+							
+							&:hover {
+								background: $sand;
+							}
+							
+							position: relative;
+							display: block;
+							@include rem(padding, $line/2 $line/2 $line/2 $line*2);
+							color: $navy;
+							text-decoration: none;
+						}
+
+						.icon {
+							position: absolute;
+							top: 50%;
+							left: 10px;
+							margin-top: -8px;
+							@include rem(font-size, 16px);
+							color: #778ac9;
+						}
+						
+						.dt {
+							color: $grey;
+						}
+					}
+				}
+			}
+			
+			&.qa {
+				
+				header {
+					background: $babyblue;
+					
+					.indicator {
+						color: $cornflower;
+					}
+				}
+			}
+		
+			float: left;
+			width: 100%;
+			@include rem(padding, $line/2);
+			
+			@include respond-to(landscape) {
+				
+				&.featured {
+					width: 100%;
+				}
+				
+				&.realtime {
+					width: 100%;
+				}
+				
+				float: left;
+				width: 50%;
+			}
+			
+			@include respond-to(desktop) {
+				
+				&.featured {
+					width: 66.6%;
+				}
+				
+				&.realtime {
+					width:  33.3%;
+				}
+				
+				width: 33.3%;
+			}
+			
+			@include respond-to(wide) {
+				
+				&.featured {
+					width: 50%;
+				}
+				
+				&.realtime {
+					width: 50%;
+				}
+				
+				width: 25%;
+			}
+
+			a {
+				display: block;
+				text-decoration: none;
+			}
+
+			> .wrapper {
+				overflow: hidden;
+				@include border-radius(3px);
+				border: 1px solid $lavendar;
+				background: #fff;
+			}
+			
+			header {
+				overflow: hidden;
+				position: relative;
+				min-height: 160px;
+				@include rem(padding, $line);
+				background: $snuff;
+				@include border-radius(3px 3px 0 0);
+				
+				.mobile & {
+					min-height: 0;
+				}
+				
+				h2 {
+					z-index: 2;
+					position: relative;
+					color: $navy;
+					
+					.wrap {
+						
+						span {
+							position: relative;
+						}
+					}
+
+					.subtitle {
+						display: block;
+						@include rem(font-size, 16px);
+					}
+					
+					.title {
+						display: block;
+						@include rem(font-size, 24px);
+					}
+				}
+				
+				h3 {
+					z-index: 2;
+					position: relative;
+				}
+				
+				.indicator {
+					position: absolute;
+					top: 50%;
+					left: 0;
+					width: 100%;
+					margin-top: -70px;
+					@include rem(font-size, 140px);
+					line-height: 1;
+					color: $lavendar;
+					text-align: center;
+					
+					.mobile & {
+						@include rem(font-size, 80px);
+						margin-top: -40px;
+					}
+				}
+				
+				.vsl {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					@include background-size(cover);
+					@include border-radius(3px 3px 0 0);
+					
+					img {
+						width: 100%;
+						height: auto;
+					}
+				}
+			}
+			
+			p {
+				@include rem(padding, $line $line 0 $line);
+				@include rem(font-size, 18px);
+				font-weight: bold;
+				color: $grey;
+			}
+
+			footer {
+				@include clear;
+				position: relative;
+				@include rem(padding, $line);
+				
+				.avatar {
+					float: left;
+					width: 40px;
+					margin: 0 15px 0 0;
+					
+					img {
+						width: 100%;
+					}
+				}
+
+				.author {
+					float: left;
+					margin-top: 2px;
+					
+					.name {
+						display: block;
+						@include rem(font-size, 11px);
+						font-weight: bold;
+						white-space: nowrap;
+						color: $black;
+					}
+					
+					.pubdate {
+						display: block;
+						@include rem(font-size, 11px);
+						white-space: nowrap;
+						color: $grey;
+					}
+				}
+
+				.comments {
+					float: right;
+					position: relative;
+					display: inline-block;
+					padding: 4px 6px;
+					background: $lavendar;
+					@include border-radius(3px);
+					@include rem(font-size, 11px);
+					color: $navy;
+					text-decoration: none;
+					text-align: center;
+
+					&:after {
+						content: " ";
+						position: absolute;
+						top: 100%;
+						left: 50%;						
+						height: 0;
+						width: 0;
+						margin-left: -4px;
+						border: solid transparent;
+						border-top-color: $lavendar;
+						border-width: 4px;
+						pointer-events: none;
+					}
+				}
+			}
+		}
+		
+		.archive {
+			@include clear;
+			@include rem(padding, $line 0 $line/2 0);
+			text-align: center;
+			
+			a {
+				@include rem(font-size, 18px);
+				color: $orange;
+				font-weight: bold;
+			}
+			
+			.icon {
+				vertical-align: bottom;
+				margin-right: 5px;
+			}
+		}
+	}

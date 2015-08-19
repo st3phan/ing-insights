@@ -1,0 +1,298 @@
+
+    // ========== Main navigation ==========
+    
+	.nav-main {
+		@include rem(margin, $line 0 0 0);
+		@include rem(padding, 0 $line/2);
+		
+		> .wrapper {
+			position: relative;
+			z-index: 10000;
+			float: left;
+			width: 100%;
+			background: #cacaca;
+			@include background(linear-gradient(top, #cacaca, #b9b9b9));
+			@include border-radius(3px);
+			border-bottom: 1px solid #aaa;
+			
+			/* IE7 fucks up without these. Bite me! */
+			*float: none;
+			*display: inline-block;
+			*width: auto;
+
+			.not-mobile-menu {
+				display: none;
+				
+				@include respond-to(tablet) {
+					display: block;
+				}
+			}
+			
+			.mobile-menu {
+				float: none; 
+				
+				@include respond-to(tablet) {
+					display: none;
+				}
+				
+				.toggle-search {
+					float: right;
+				}
+				
+				.toggle-menu {
+					float: right;
+					border-left: 1px solid #aaa;
+				}
+			}
+						
+			> ul {
+			
+				> li {
+					position: relative;
+					float: left;
+					height: 37px;
+					border-left: 1px solid #aaa;
+					line-height: 1;
+					
+					&:first-child,
+					&:first-child a,
+					&:first-child a:hover {
+						border-left: 0;
+						@include border-radius(3px 0 0 3px);
+					}
+					
+					&.toggle-menu,
+					&.toggle-menu a {
+					 	border-right: 0;
+					 	@include border-radius(0 3px 3px 0);
+					}
+					
+					&:hover ul {
+						display: block;
+					}
+					
+					&:hover > a {
+						background: #989898;
+						@include background(linear-gradient(top, #b4b4b4, #989898));
+						border-left: 1px solid #b4b4b4;
+					}
+					
+					&.search {
+						float: none;
+						display: block;
+						overflow: hidden;
+						
+						@include respond-to(desktop) {
+							float: right;
+						}
+					}
+					
+					> a {
+						display: inline-block;
+						height: 38px;
+						margin-bottom: -1px;
+						padding: 0 12px;
+						border-bottom: #aaa;
+						border-top: 1px solid #cacaca;
+						border-left: 1px solid #cdcdcd;
+						font-weight: bold;
+						color: #fff;
+						text-decoration: none;
+						@include text-shadow(-1px -1px 0px rgba(0, 0, 0, 0.2));
+						line-height: 38px;
+						
+						&.active, &.active:hover {
+							border-top: 1px solid #ebebeb;
+							border-bottom: 1px solid #ccc;
+							border-left: 1px solid #fff;
+							background: #fff;
+							@include background(linear-gradient(top, #fff, #eee));
+							color: #f60;
+							@include text-shadow(1px 1px 0px rgba(250, 250, 250, 1));
+						}
+					}
+				}
+				
+				ul {
+					display: none;
+					z-index: 9999;
+					position: absolute;
+					top: 100%;
+					left: 0;
+					width: auto;
+					margin: -1px 0 0 -1px;
+					border-bottom: 1px solid #aaa;
+					
+					li {
+						
+						&:first-child {
+							border-top: 1px solid #aaa;
+							margin-top: 1px;
+						}
+						
+						a {
+							display: block;
+							padding: 10px 12px;
+							white-space: nowrap;
+							background: #C6C6C6;
+							font-weight: bold;
+							color: #fff;
+							text-decoration: none;
+							@include text-shadow(-1px -1px 0px rgba(0, 0, 0, 0.2));
+							
+							&:hover {
+								background: #989898;
+								@include background(linear-gradient(top, #b4b4b4, #989898));
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		.search {
+			background: #ff6802;
+			@include background(linear-gradient(top, #ff8a3c, #ff6802));
+			@include border-radius(0 3px 3px 0);
+			padding: 0 0 0 5px;
+			
+			.submit {
+				float: right;
+				vertical-align: top;
+				width: 20%;
+				height: 38px;
+				padding: 0 5px;
+				background: 0;
+				border: 0;
+				@include rem(font-size, 20px);
+				font-weight: bold;
+				color: #fff;
+				@include text-shadow(-1px -1px 0px rgba(0, 0, 0, 0.2));
+				
+				/* IE7 fucks up without these. Bite me! */
+				*float: none;
+				*display: inline-block;
+				*width: auto;
+			}
+
+			input {
+				float: left;
+				width: 80%;
+				height: 28px;
+				margin: 5px 0 0 0;
+				padding: 0 2px;
+				@include rem(font-size, 14px);
+				line-height: 1;
+				
+				.lt-ie9 & {
+					line-height: 28px;
+				}
+				
+				@include border-radius(3px);
+				border: 0;
+				
+				/* IE7 fucks up without these. Bite me! */
+				*float: none;
+				*display: inline-block;
+				*width: auto;
+			}
+		}
+	}
+	
+    // ========== Top navigation ==========
+    
+    .nav-top {
+    	position: relative;
+    	top: -5px;
+    	overflow: hidden;
+		width: 100%; /* need this for IE<8 */
+		@include rem(margin, 0 0 $line 0);
+		@include rem(padding, 0 $line/2);
+		
+		@include respond-to(tablet) {
+			display: none;
+		}
+		
+		.wrapper {
+			background: #ff6600;
+		}
+		
+		ul {
+			border: 1px solid #f35e00;
+			border-top: 0;
+			
+			li {
+				border-top: 1px solid #f35e00;
+			}
+			
+			a {
+				display: block;
+				padding: 10px 12px;
+				color: #000;
+				font-weight: bold;
+				text-decoration: none;
+				outline: 0;
+			}
+		}
+		
+		.search {
+			padding: 10px 12px;
+			input {
+				width: 100%;
+				margin: 0;
+
+			}
+		}
+    }
+    
+    // ========== Pagination ==========
+    
+    .paging {
+		@include clear;
+		
+    	ul {
+    		position: relative;
+    		left: 50%;
+    	
+
+   		 	float: left;
+   	 		@include rem(padding, $line 0);
+   	 		list-style: none;
+    	
+	    	li {
+	    		position: relative;
+	    		right: 50%;
+	    		float: left;
+	    		
+				span {
+	    			display: inline-block;
+	    			width: 32px;
+	    			margin: 2px;
+	    			padding: 4px 6px;
+	    			color: #999;
+	    			text-align: center;
+					text-decoration: none;
+					border: 1px solid #D7D7D7;
+					@include border-radius(3px);
+				}
+				
+	    		a {	
+	    			&:hover {
+	    				span, &.prev span, &.next span {
+		    				color: #000;
+	    				}
+	    			}
+	    			
+	    			&.active span, &.prev span, &.next span {
+		    			@include background(linear-gradient(top, rgba(255,255,255,1), rgba(232,232,232,1)));
+		    			@include rem(font-size, 16px);
+		    			color: #ff6600;
+	    			}
+	    			
+					&.prev span, &.next span {
+						color: #999;
+					}
+	    		}
+	    	}
+	    }
+    }

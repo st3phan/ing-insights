@@ -1,0 +1,179 @@
+
+    // ========== Dashboard ==========
+    
+    .dashboard {
+    	
+    	&:before {	    	
+			content: "";
+			position: absolute;
+			z-index: -2;
+            top: 50%;
+            bottom: 0;
+            left: 10%;
+            right: 10%;	    	
+            @include box-shadow(0 0 15px rgba(0,0,0,0.3));
+            @include border-radius(#{100px/10px});
+    	}
+    
+    	display: none;
+    	position: relative;
+    	@include rem(padding, 0 $line);
+    	
+    	@include respond-to(tablet) {
+    		display: block;
+    	}
+    	
+    	> .wrapper {
+    		@include clear;
+    		@include rem(padding, $line);
+	    	background: #fff;
+	    	border-right: 1px solid #bfbfbf;
+	    	border-bottom: 1px solid #bfbfbf;
+	    	border-left: 1px solid #bfbfbf;
+    	}
+    	
+    	.trends {
+    		float: left; 
+    		
+    		p {
+    			display: none;
+    			float: left;
+    			padding-top: 1px;
+    			@include rem(font-size, 12px);
+    			@include rem(line-height, $line*1.5);
+    			color: #999;
+    			
+    			@include respond-to(desktop) {
+    				display: block;
+    			}
+    		}
+    		
+    		ul {
+    			float: left;
+				list-style: none;
+				
+				li {
+					float: left;
+					@include rem(font-size, 12px);
+					margin-left: 3px;
+					
+					a {
+					
+						&.positive {
+							color: $green;
+							
+							&:hover {
+								background: $green;
+								color: $white;
+							}
+						}
+						
+						&.negative {
+							color: $red;
+							
+							&:hover {
+								background: $red;
+								color: $white;
+							}
+						}
+						
+						&:hover {
+							background: $dove;
+							color: $white;
+						}
+					
+						display: block;
+						@include rem(padding, 0 $line/2);
+						border: 1px solid $mercury;
+						@include border-radius(3px);
+						text-decoration: none;
+						@include rem(line-height, $line*1.5);
+						color: $dove;
+					}
+				}
+			}
+    	}
+    	
+    	.social {
+    		float: right;
+    		
+    		p {
+    			display: none;
+    			float: left;
+    			padding-top: 1px;
+    			@include rem(font-size, 12px);
+    			@include rem(line-height, $line*1.5);
+    			color: #999;
+    			
+    			@include respond-to(desktop) {
+    				display: block;
+    			}
+    		}
+    		
+    		ul {
+    			float: left;
+    			list-style: none;
+    			
+    			li {
+					
+					&.twitter a {
+					
+						&:hover {
+							background: $color-twitter;
+							color: $white;
+						}
+					
+						color: $color-twitter;
+					}
+					&.facebook a {
+
+						&:hover {
+							background: $color-facebook;
+							color: $white;
+						}
+					
+						color: $color-facebook;
+					}
+					&.email a {
+					
+						&:hover {
+							background: $grey;
+							color: $white;
+						}
+						
+						color: $grey;
+					}
+					&.rss a {
+					
+						&:hover {
+							background: $orange;
+							color: $white;
+						}
+					
+						color: $orange;
+					}
+					&.youtube a {
+					
+						&:hover {
+							background: $color-youtube;
+							color: $white;
+						}
+					
+						color: $color-youtube;
+					}
+					
+    				float: left;
+    				margin-left: 3px;
+    				
+					a {
+						display: block;
+	    				@include rem(padding, 0 $line/2);
+						border: 1px solid $mercury;
+						@include border-radius(3px);
+						text-decoration: none;
+						@include rem(line-height, $line*1.5);
+					}
+    			}
+    		}
+    	}
+    }

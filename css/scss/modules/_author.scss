@@ -1,0 +1,176 @@
+
+	// ========== Highlight ==========
+	
+	.content.author {
+		// we use a mixin to build the grid
+		// look in _content.scss for this mixin
+		@include contentGrid(60%, 'tablet') { }
+	
+		> .wrapper > header {
+		
+			padding-top: $line*3;
+		
+			> h1 {
+			
+				z-index: 1;
+				position: relative;
+				@include rem(padding, $line*2 $line 0 $line);
+				@include rem(font-size, 24px);
+				@include text-shadow(1px 1px 0px rgba(0, 0, 0, 1));
+				color: $white;
+				
+				@include respond-to(tablet) {
+					@include rem(font-size, 48px);
+				}
+
+				span {
+					background: $black;
+					background: rgba(0,0,0,.3);
+				}
+			}
+			
+			> h2 {
+				z-index: 1;
+				position: relative;
+				@include rem(margin-top, $line/2);
+				@include rem(padding, 0 $line 0 $line);
+				@include rem(font-size, 16px);
+				@include text-shadow(1px 1px 0px rgba(0, 0, 0, 1));
+				color: $white;
+				
+				@include respond-to(tablet) {
+					@include rem(font-size, 20px);
+				}
+
+				span {
+					background: $black;
+					background: rgba(0,0,0,.3);
+				}
+			}
+
+			.intro > .wrapper {
+				background: $white;
+				background: rgba(255,255,255,.95);
+				
+				.article {
+					margin-top: 0;
+					
+					h2 {
+						@include rem(font-size, 26px);
+						
+						span {
+							@include rem(font-size, 20px);
+						}
+					}
+					
+					p {
+						@include rem(font-size, 16px);
+						color: $black;
+					}
+					
+					.meta {
+						color: $black;
+					}
+				}
+			}
+		}
+		
+		.article {
+			
+			&:first-child {
+				@include rem(margin-top, $line*2);
+			}
+			
+			&:hover {
+				@include transition-property(box-shadow);
+				@include transition-duration(.4s);
+				@include box-shadow(0 0 15px 0 rgba(0,0,102,.15));
+			}
+			
+			&.update {
+			
+				h2 {
+					color: $orange;
+					
+					span {
+						color: $black;
+					}
+				}
+				
+				p {
+					color: $black;
+				}
+				
+				.indicator {
+					color: $orange;
+				}
+			}
+			
+			position: relative;
+			@include rem(padding, $line 0);
+			padding-left: 15%;
+			@include transition-property(box-shadow);
+			@include transition-duration(.4s);
+			
+			@include respond-to(desktop) {
+				padding-left: 10%;
+				padding-right: 5%;
+			}
+			
+			a {
+				text-decoration: none;
+				display: block;
+			}
+			
+			.indicator {
+				position: absolute;
+				top: $line;
+				left: 2%;
+				@include rem(font-size, 24px);
+				color: $navy;
+			}
+		
+			h2 {
+				@include rem(font-size, 20px);
+				color: #000066;
+				
+				span {
+					display: block;
+					@include rem(font-size, 16px);
+				}
+			}
+			
+			p {
+				@include rem(padding, $line/4 0 $line/2 0);
+				@include rem(font-size, 14px);
+				color: #999999;
+				line-height: 1.6;
+				font-weight: bold;
+			}
+			
+			.meta {
+				@include clear;
+				list-style: none;
+				@include rem(font-size, 13px);
+				color: #8f8fbc;
+				
+				@include respond-to(desktop) {
+				
+					.pubdate {
+						float: left;
+					}
+					
+					.probabilty {
+						float: right;
+					}
+				}
+			}
+		}
+		
+		.sidebar {
+			
+			.realtime {
+				width: 100%;
+			}
+		}
+	}
